@@ -1,24 +1,30 @@
 package labsheet6.exercise1;
 
+
 import javax.swing.*;
 
-public class testperson {
-    public static void main(String[] args) {
-        String output="",firstName,lastName;
+public class testperson
+{
+    public static void main(String[] args)
+    {
+        String text,firstName,lastName;
 
-        person p1 = new person();
+        text = "Calling the Person() constructor .....";
+        person person1 = new person();
+        text += "\nValue of first Person object is: " + person1;
 
-        output+="calling the person constructor 1......" + p1.toString();
+        text += "\n\nCalling the Person(String,String) constructor after getting user-supplied values .....";
 
-        firstName=JOptionPane.showInputDialog("Enter First Name: ");
-        lastName=JOptionPane.showInputDialog("Enter Last Name: ");
+        firstName = JOptionPane.showInputDialog("Please enter the first name of the second person");
+        lastName = JOptionPane.showInputDialog("Please enter the last name of the second person");
 
-        person p2 = new person(firstName,lastName);
+        person person2 = new person(firstName, lastName);
+        text += "\nValue of second person object is: " + person2;
 
-        output+="\ncalling the person constructor 2......" + p2;
+        JOptionPane.showMessageDialog(null,"*****Person Class Tester*****\n\n" + text,"",
+                JOptionPane.INFORMATION_MESSAGE);
 
+        System.exit(0);
 
-
-        JOptionPane.showMessageDialog(null,output,"input",JOptionPane.INFORMATION_MESSAGE);
     }
 }

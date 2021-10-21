@@ -4,32 +4,41 @@ public class person {
     private String firstName;
     private String lastName;
 
-    public person(){
-        firstName="Not Supplied";
-        lastName="Not Supplied";
+    public person() {
+        this("Not Supplied","Not Supplied");
     }
-    public person(String firstName,String lastName){
-        this.firstName=firstName;
-        this.lastName=lastName;
-    }
-    public String toString(){
-        return "Value of the first person is:\n"+
-                "First name: "+ getFirstName() + "\n" +
-                "Last Name: "+ getLastName();
-    }
-    public void setName(String firstName,String lastName){
 
+    public person(String firstName, String lastName) {
+        setName(firstName, lastName);
     }
-    public void setFirstName(String firstName){
-        this.firstName=firstName;
+
+
+    public void setName(String firstName, String lastName) {
+        setFirstName(firstName);
+        setLastName(lastName);
     }
-    public void setLastName(String lastName){
-        this.lastName=lastName;
+
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-    public String getFirstName(){
-       return firstName;
+
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-    public String getLastName(){
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+
+    public String getLastName() {
         return lastName;
+    }
+
+    public String toString() {
+        return "First name: " + getFirstName() + "   " + "Last name: " + getLastName();
     }
 }
